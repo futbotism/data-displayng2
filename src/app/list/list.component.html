@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <!--<div *ngFor="let ship of (ships | async).results">
+      {{ship.name}}
+    </div>-->
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Company Check Severity</th>
+          <th>Height</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ship of (ships | async).results">
+          <td>{{ship.name}}</td>
+          <td>{{ship.company_check_severity}}</td>
+          <td>1,91</td>
+          <td>Akron, OH</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
