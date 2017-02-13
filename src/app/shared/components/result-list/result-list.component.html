@@ -1,0 +1,20 @@
+<div *ngIf="(results$ | async).length > 0" class="container list">
+  <h3 class="title">Previous Results</h3>
+  <div class="row" *ngFor="let result of results$ | async">
+    <div class="column" [ngClass]="{winner: result.winner === result.player1}">
+      <h3>{{result.player1}}</h3>
+      <p>{{result.player1_weapon}}</p>
+    </div>
+    <div class="column">
+      <h6> VS </h6>
+    </div>
+    <div class="column" [ngClass]="{winner: result.winner === result.player2}">
+      <h3>{{result.player2}}</h3>
+      <p>{{result.player2_weapon}}</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="(results$ | async).length < 1">
+  <h3 class="title">No results available</h3>
+</div>
