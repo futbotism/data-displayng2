@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShipService } from '../shared/services/ship.service';
 import { Store } from '@ngrx/store';
-import { AppState } from '../shared/store';
 import { Ship } from '../shared/models/ship.model';
 import { Observable } from 'rxjs/Observable';
 
@@ -18,7 +17,6 @@ export class ListComponent implements OnInit {
 
   constructor(
     private shipService: ShipService,
-    private store: Store<AppState>
   ) {
     this.ships = this.shipService.getShipsData();
   }
@@ -31,11 +29,11 @@ export class ListComponent implements OnInit {
     this.sortQuery = s;
   }
 
-  setSearch(s: Object){
+  setSearch(s: Object) {
     this.searchQuery = s['searchQuery'];
   }
 
-  setFilter(f: Object){ 
+  setFilter(f: Object) {
     this.filterQuery = f;
   }
 

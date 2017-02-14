@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { SharedModule } from '../app/shared/shared.module';
-import { appState } from './shared/store/';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { appState } from './shared/store/';
     BrowserModule,
     FormsModule,
     HttpModule,
-    StoreModule.provideStore(appState),
     RouterModule.forRoot(appRoutes),
     SharedModule
   ],
