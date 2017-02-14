@@ -1,24 +1,25 @@
+<app-filter-panel ($searchChanged)="setSearch($event)" ($filterChanged)="setFilter($event)"></app-filter-panel>
+
 <div class="container">
   <div class="row">
-    <!--<div *ngFor="let ship of (ships | async).results">
-      {{ship.name}}
-    </div>-->
 
     <table>
       <thead>
         <tr>
           <th>Name</th>
           <th>Company Check Severity</th>
-          <th>Height</th>
-          <th>Location</th>
+          <th>Created</th>
+          <th>Modified</th>
+          <th>View</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ship of (ships | async).results">
+        <tr *ngFor="let ship of (ships | async).results | search : searchQuery | filter : filterQuery">
           <td>{{ship.name}}</td>
           <td>{{ship.company_check_severity}}</td>
-          <td>1,91</td>
-          <td>Akron, OH</td>
+          <td>{{ship.created | date : yMd}}</td>
+          <td>{{ship.modified | date : yMd}}</td>
+          <td><a routerLink="{{ship.id}}">View</a></td>
         </tr>
       </tbody>
     </table>

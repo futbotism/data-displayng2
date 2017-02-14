@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 
 import { RouterModule } from '@angular/router';
 import { routes } from './list.routes';
+import { SingleListComponent } from './single-list/single-list.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,6 @@ import { routes } from './list.routes';
     SharedModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ListComponent]
+  declarations: [ListComponent, SingleListComponent]
 })
 export class ListModule {}

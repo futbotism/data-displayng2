@@ -12,14 +12,25 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ListComponent implements OnInit {
   ships: Observable<Ship[]>;
+  searchQuery: string;
+  filterQuery: Object;
+
   constructor(
     private shipService: ShipService,
     private store: Store<AppState>
   ) {
-    this.ships = this.shipService.getShipData();
+    this.ships = this.shipService.getShipsData();
   }
 
   ngOnInit() {
+  }
+
+  setSearch(s: Object){
+    this.searchQuery = s['searchQuery'];
+  }
+
+  setFilter(f: Object){ 
+    this.filterQuery = f;
   }
 
 }
