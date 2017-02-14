@@ -1,0 +1,30 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="column">
+
+      <form #searchForm="ngForm">
+
+        <input type="text" name="searchQuery" [(ngModel)]="searchQuery">
+      
+      </form>
+
+    </div>
+
+    <div class="column">
+
+      <form #filterForm="ngForm">
+
+        <input type="checkbox" name="critical" [(ngModel)]="critical"> Critical<br>
+        <input type="checkbox" name="warning" [(ngModel)]="warning"> Warning<br>
+        <input type="checkbox" name="ok" [(ngModel)]="ok"> Ok
+      
+      </form>
+    
+    </div>
+
+
+  </div>
+
+</div>
