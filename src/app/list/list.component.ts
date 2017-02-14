@@ -14,6 +14,7 @@ export class ListComponent implements OnInit {
   ships: Observable<Ship[]>;
   searchQuery: string;
   filterQuery: Object;
+  sortQuery: string;
 
   constructor(
     private shipService: ShipService,
@@ -23,6 +24,11 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.sortQuery = 'name';
+  }
+
+  setSort(s) {
+    this.sortQuery = s;
   }
 
   setSearch(s: Object){

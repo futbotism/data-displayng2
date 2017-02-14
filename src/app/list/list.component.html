@@ -6,15 +6,15 @@
     <table>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Company Check Severity</th>
+          <th><a (click)="setSort('name')">Name</a></th>
+          <th><a (click)="setSort('company_check_severity')">Company Check Severity</a></th>
           <th>Created</th>
           <th>Modified</th>
           <th>View</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ship of (ships | async).results | search : searchQuery | filter : filterQuery">
+        <tr *ngFor="let ship of (ships | async).results | search : searchQuery | filter : filterQuery | sort : sortQuery">
           <td>{{ship.name}}</td>
           <td>{{ship.company_check_severity}}</td>
           <td>{{ship.created | date : yMd}}</td>
