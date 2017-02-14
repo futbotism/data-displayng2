@@ -1,5 +1,12 @@
-<p>
-  single-list works!
-</p>
+<div class="container">
+    <div class="row">
 
-{{(ship | async) | json}}
+        <div class="column">
+
+            <h1>{{(ship | async).name}}</h1>
+            <h3>{{(ship | async).company_check_prior_months_severity}}</h3>
+
+        </div>
+
+    </div>
+</div>

@@ -1,7 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppState } from '../store/';
 import { Store } from '@ngrx/store';
 import { ShipsHttpServiceMock } from './ships.http.service.mock';
 import { ShipHttpServiceMock } from './ship.http.service.mock';
@@ -11,7 +10,6 @@ import 'rxjs/add/operator/map';
 export class ShipService {
 
     constructor(
-        private store: Store<AppState>,
         private shipsHttpServiceMock: ShipsHttpServiceMock,
         private shipHttpServiceMock: ShipHttpServiceMock,
     ) {
@@ -25,7 +23,8 @@ export class ShipService {
 
     getShipByIdData(id) {
         return this.shipHttpServiceMock.get(id).map(data => {
-            return data.json();
+            const d = data.json();
+            return d[0];
         });
     }
 }
