@@ -8,6 +8,7 @@ import { ShipService } from './services/ship.service';
 import { SearchPipe } from './pipes/search.pipe';
 import { FilterPanelComponent } from './components/filter-panel/filter-panel.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   imports: [
@@ -15,15 +16,17 @@ import { FilterPipe } from './pipes/filter.pipe';
     FormsModule
   ],
   declarations: [
-    SearchPipe,
     FilterPanelComponent,
-    FilterPipe
+    FilterPipe,
+    SearchPipe,
+    SortPipe
   ],
   exports: [
+    FilterPanelComponent,
+    FilterPipe,
     FormsModule,
     SearchPipe,
-    FilterPipe,
-    FilterPanelComponent
+    SortPipe,
   ],
   providers: [
     ShipHttpServiceMock,
